@@ -1,0 +1,47 @@
+{
+  "properties": {
+    "displayName": "Require-ProjectName-Tag",
+    "policyType": "Custom",
+    "mode": "All",
+    "metadata": {
+      "createdBy": "dd8bbbd5-92d2-4c8c-b4f0-65d9e8253079",
+      "createdOn": "2025-08-02T05:09:55.4982915Z",
+      "updatedBy": null,
+      "updatedOn": null
+    },
+    "version": "1.0.0",
+    "parameters": {
+      "tagName": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Tag Name",
+          "description": "The required tag name."
+        },
+        "defaultValue": "ProjectName"
+      }
+    },
+    "policyRule": {
+      "if": {
+        "field": "[concat('tags[', parameters('tagName'), ']')]",
+        "exists": "false"
+      },
+      "then": {
+        "effect": "deny"
+      }
+    },
+    "versions": [
+      "1.0.0"
+    ]
+  },
+  "id": "/subscriptions/f131ab3d-ecbf-4ce4-b2c2-c937dc44a331/providers/Microsoft.Authorization/policyDefinitions/27158d7a-a2c1-48ad-a254-7941e13901ee",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "27158d7a-a2c1-48ad-a254-7941e13901ee",
+  "systemData": {
+    "createdBy": "sing1883@algonquinlive.com",
+    "createdByType": "User",
+    "createdAt": "2025-08-02T05:09:55.4438182Z",
+    "lastModifiedBy": "sing1883@algonquinlive.com",
+    "lastModifiedByType": "User",
+    "lastModifiedAt": "2025-08-02T05:09:55.4438182Z"
+  }
+}
