@@ -1,0 +1,52 @@
+{
+  "properties": {
+    "displayName": "Only-CanadaCentral",
+    "policyType": "Custom",
+    "mode": "All",
+    "metadata": {
+      "createdBy": "dd8bbbd5-92d2-4c8c-b4f0-65d9e8253079",
+      "createdOn": "2025-08-02T05:07:58.3106114Z",
+      "updatedBy": null,
+      "updatedOn": null
+    },
+    "version": "1.0.0",
+    "parameters": {
+      "allowedLocations": {
+        "type": "Array",
+        "metadata": {
+          "displayName": "Allowed Locations",
+          "description": "Only Canada Central is allowed.",
+          "strongType": "location"
+        },
+        "defaultValue": [
+          "canadacentral"
+        ]
+      }
+    },
+    "policyRule": {
+      "if": {
+        "not": {
+          "field": "location",
+          "in": "[parameters('allowedLocations')]"
+        }
+      },
+      "then": {
+        "effect": "deny"
+      }
+    },
+    "versions": [
+      "1.0.0"
+    ]
+  },
+  "id": "/subscriptions/f131ab3d-ecbf-4ce4-b2c2-c937dc44a331/providers/Microsoft.Authorization/policyDefinitions/cbf7e152-c862-4bbc-ac7a-d327c4d4b4bb",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "cbf7e152-c862-4bbc-ac7a-d327c4d4b4bb",
+  "systemData": {
+    "createdBy": "sing1883@algonquinlive.com",
+    "createdByType": "User",
+    "createdAt": "2025-08-02T05:07:58.2892263Z",
+    "lastModifiedBy": "sing1883@algonquinlive.com",
+    "lastModifiedByType": "User",
+    "lastModifiedAt": "2025-08-02T05:07:58.2892263Z"
+  }
+}
